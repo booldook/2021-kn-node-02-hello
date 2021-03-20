@@ -1,0 +1,12 @@
+table.table.table-hover
+	thead.thead-dark
+		tr
+			th(style="width: 10%") 번호
+			th(style="width: 30%") 이름
+			th 국어점수
+	tbody 
+		each v in users
+			tr
+				td= v.id
+				td= v.name
+				td= v.kor

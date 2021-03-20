@@ -1,0 +1,8 @@
+a:link,
+a:visited,
+a:active,
+a:hover {color: inherit;}
+h1 {font-size: 1rem;}
+
+.header-wrapper {background-color: #333; color: #fff;}
+.header-wrapper a:hover {background-color: #ccc; color: #000;}
