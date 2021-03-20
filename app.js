@@ -20,15 +20,18 @@ app.use((req, res, next) => {
 	next()
 })
 
-app.get('/', (req, res, next) => {
-	res.send('<h1>Hello Root'+nowDate()+'</h1>')
-})
+/* Router */
+const userRouter = require('./routes/user')
+const boardRouter = require('./routes/board')
+app.use('/user', userRouter)
+app.use('/board', boardRouter)
 
-app.get('/hello', (req, res, next) => {
+/* app.get('/hello', (req, res, next) => {
 	next(createError(500, {msg: 'DB에러가 발생하였습니다.'}))
 	//res.send('hello'+req.nowTime)
-})
+}) */
 
+/* Error */
 app.use((req, res, next) => {
 	const msg = '<h1 style="margin: 100px;">Error 404</h1><div>'+nowDate()+'</div>';
 	next(createError(404, {code: 404, msg}));
