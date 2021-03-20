@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const createError = require('http-errors')
+const { zeroPlus, nowDate } = require('./modules/util') // { zeroPlus, nowDate }
 
 app.listen(3000, () => {
 	console.log('=====================');
@@ -15,12 +16,12 @@ app.use('/uploads', express.static(path.join(__dirname, './storages')))
 
 /* Middleware */
 app.use((req, res, next) => {
-	req.nowTime = new Date()
+	req.nowTime = nowDate()
 	next()
 })
 
 app.get('/', (req, res, next) => {
-	res.send('<h1>Hello Root'+req.nowTime+'</h1>')
+	res.send('<h1>Hello Root'+nowDate()+'</h1>')
 })
 
 app.get('/hello', (req, res, next) => {
@@ -29,7 +30,7 @@ app.get('/hello', (req, res, next) => {
 })
 
 app.use((req, res, next) => {
-	const msg = '<h1 style="margin: 100px;">Error 404</h1><div>'+req.nowTime+'</div>';
+	const msg = '<h1 style="margin: 100px;">Error 404</h1><div>'+nowDate()+'</div>';
 	next(createError(404, {code: 404, msg}));
 })
 
