@@ -9,7 +9,8 @@ router.get('/', (req, res, next) => {
 		{id: 2, name: '홍길만', kor: 80},
 		{id: 3, name: '홍길순', kor: 85},
 	]
-	// res.render('hello', { users, ...pug });
+	// res.render('hello', { users, ...pug })
+	// res.render('user/list', { users, ...pug })
 	res.render('user/list', { users, ...pug })
 })
 
