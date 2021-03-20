@@ -1,0 +1,12 @@
+.wrapper {max-width: 1000px; margin: auto; display: flex; height: 100vh;}
+.wrapper > :first-child {width: 25%; border: 1px solid red;}
+.wrapper > :last-child {width: 75%; border: 1px solid blue;}
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 0.5em 1em;
+	border: 1px solid blue;
+	text-align: center;
+}

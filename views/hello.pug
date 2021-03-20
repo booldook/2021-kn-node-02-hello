@@ -1,9 +1,17 @@
-doctype html
-html(lang="ko")
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible", content="IE=edge")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Document
-	body
-		h1 Hello Pug
+extends ./layout/default
+block nav
+	div 네비게이션
+block content
+	h1 회원리스트
+	table
+		thead
+			tr
+				th 번호
+				th 이름
+				th 국어점수
+		tbody 
+			each v in users
+				tr
+					td= v.id
+					td= v.name
+					td= v.kor
